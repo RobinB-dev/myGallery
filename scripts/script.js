@@ -1,16 +1,22 @@
-const projectName = document.querySelector(".projectName");
-const subtitle = document.querySelector(".subtitle");
-const explications = document.querySelector(".explications");
-const ElemBody = document.querySelector("body");
-const ElemText = document.querySelectorAll(".text");
+const projectName = document.querySelector(".projectName")
+const subtitle = document.querySelector(".subtitle")
+const explications = document.querySelector(".explications")
+const ElemBody = document.querySelector("body")
+const ElemText = document.querySelectorAll(".text")
+const cursor2 = document.querySelector(".cursor2")
 const dotContainer = document.querySelector(".dot-container")
 const loaderContainer = document.querySelector(".loader-container")
-NBcycle = 7
-direction = 0
-IMGwidth = vmin(70)/1.4
-IMGheight = vmin(70)
-NBprojet = textTable.length
-enterCount = 0
+const arrowsFullscreen = document.querySelector(".arrowsFullscreen")
+
+const NBprojet = textTable.length
+let NBcycle = 7
+let direction = 0
+let IMGwidth = vmin(70)/1.4
+let IMGheight = vmin(70)
+let enterCount = 0
+let fullscreenKey = 0
+let mouseX = 0;
+let mouseY = 0;
 function vh(v) {
   var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
   return (v * h) / 100;
@@ -28,9 +34,16 @@ window.addEventListener('resize', setWindowSize);
 function setWindowSize() {
   IMGwidth = vmin(70)/1.4
   IMGheight = vmin(70)
+  if(enterCount%2 != 0) {
+    enterOpen()
+  } else {
+    for (i = 1; i < NBprojet+1; i++) {
+      const firstImg = document.querySelector(`.img-${i}`);
+      firstImg.style.height = vmin(70) + "px"
+      firstImg.style.width = vmin(70)/1.4 + "px"
+    }
+  }
 }
-
-
 
 
 
@@ -48,31 +61,35 @@ for (i = 1; i < NBprojet+1; i++) {
   urlImg.style.transitionDuration = (NBprojet+1-i)*200 + "ms"
 }
 
-document.querySelector(".dot1").style.background = "white"
-projectName.textContent = "Projet 1"
+// Inatial images position
+for (i = 1; i < NBprojet+1; i++) {
+  const firstImg = document.querySelector(`.img-${i}`);
+  firstImg.style.height = vmin(70) + "px"
+  firstImg.style.width = vmin(70)/1.4 + "px"
+  firstImg.style.top = vh(50) - vmin(70)/2 + "px"
+  firstImg.style.left = vw(50) - vmin(70)/2.8 + "px"
+  cursor2.style.top = vh(50) - 4.5 + "px";
+  cursor2.style.left = vw(50) - 4.5 + "px";
+}
 
-
+// Import and display project 1 data
 projectName.innerHTML = textTable.find(search => search.nb == 1 ).projectName
 subtitle.innerHTML = textTable.find(search => search.nb == 1 ).subtitle
 explications.innerHTML = textTable.find(search => search.nb == 1 ).explications
-
+document.querySelector(".dot1").style.background = "white"
 
 
 
 document.addEventListener("mousemove", e => {
-  if(enterCount%2 != 0) {
-    const cursor2 = document.querySelector(".cursor2");
-    cursor2.style.top = e.pageY - 4.5 + "px";
-    cursor2.style.left = e.pageX - 4.5 + "px";
-    enterOpen()
-  } else {
+  mouseX = e.pageX;
+  mouseY = e.pageY;;
+  cursor2.style.top = e.pageY - 4.5 + "px";
+  cursor2.style.left = e.pageX - 4.5 + "px";
+  if(enterCount%2 != 1) {
     for (i = 1; i < NBprojet+1; i++) {
       const img = document.querySelector(`.img-${i}`);
-      const cursor2 = document.querySelector(".cursor2");
       img.style.top = e.pageY - IMGheight/2 + "px";
       img.style.left = e.pageX - IMGwidth/2 + "px";
-      cursor2.style.top = e.pageY - 4.5 + "px";
-      cursor2.style.left = e.pageX - 4.5 + "px";
     }
   }
 });
@@ -80,23 +97,30 @@ document.addEventListener("mousemove", e => {
 
 document.addEventListener("keydown", e => {
   if (e.key === 'ArrowDown') {
+    if(enterCount%2 != 0) {
+      fullscreenKey = 1
+      setTimeout(function () {
+        arrowsFullscreen.style.opacity = "0"
+       }, 1000);
+    }
     direction = 'down'
     cycle()
     tutoriel()
   } 
   if (e.key === 'ArrowUp') {
+    if(enterCount%2 != 0) {
+      fullscreenKey = 1
+      setTimeout(function () {
+        arrowsFullscreen.style.opacity = "0"
+       }, 1000);
+    }
     direction = 'up'
     cycle()
     tutoriel()
   } 
   if (e.key === 'Enter') {
     tutoriel()
-    for (i = 0; i < ElemText.length; i++) {
-      ElemText[i].classList.toggle("enterClick")
-    }
-    dotContainer.classList.toggle("enterClick")
-    loaderContainer.classList.toggle("enterClick")
-    enterCount ++
+    enterToggle()
     if(enterCount%2 != 0) {
       enterOpen()
     } else {
@@ -105,19 +129,25 @@ document.addEventListener("keydown", e => {
   } 
   if (e.key === 'Escape') {
     if(enterCount%2 != 0) {
-    enterCount ++
-    enterClose()
-        for (i = 0; i < ElemText.length; i++) {
-          ElemText[i].classList.toggle("enterClick")
-        }
-        dotContainer.classList.toggle("enterClick")
-        loaderContainer.classList.toggle("enterClick")
-    } else {
+      enterToggle()
+      enterClose()
     }
   } 
 })
 
+function enterToggle() {
+  for (i = 0; i < ElemText.length; i++) {
+    ElemText[i].classList.toggle("enterClick")
+  }
+  dotContainer.classList.toggle("enterClick")
+  loaderContainer.classList.toggle("enterClick")
+  enterCount ++
+}
+
 function enterOpen() {
+  if (fullscreenKey == 0) {
+    arrowsFullscreen.style.opacity = "100"
+  }
   for (i = 1; i < NBprojet+1; i++) {
     // document.querySelector("body").style.cursor = "pointer"
     const firstImg = document.querySelector(`.img-${i}`);
@@ -129,12 +159,13 @@ function enterOpen() {
 }
 
 function enterClose() {
+  arrowsFullscreen.style.opacity = "0"
   for (i = 1; i < NBprojet+1; i++) {
     const firstImg = document.querySelector(`.img-${i}`);
     firstImg.style.height = vmin(70) + "px"
     firstImg.style.width = vmin(70)/1.4 + "px"
-    firstImg.style.top = vh(5) + "px"
-    firstImg.style.left = (vw(100)-vh(90)/1.4)/2 + "px"
+    firstImg.style.top = mouseY - vmin(70)/2 + "px"
+    firstImg.style.left = mouseX - vmin(70)/2.8 + "px"
   }
 }
 
@@ -177,7 +208,7 @@ function cycle(){
 
   }
   if(enterCount%2 != 0) {
-    enterOpen()
+    // enterOpen()
   }
   function dotRemplissage() {
     dotTransparent = document.querySelectorAll(".dot");

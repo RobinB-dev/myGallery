@@ -27,6 +27,13 @@ let textTable = [
       explications: "Cette affiche à été réalisée dans le cadre d'un travail pour M de Torquat lors de ma première année a Hetic. <br>L’objectif était de retracer la chronologie d'une information, j'ai décidé de guider le lecteur dans la lecture de l’affiche par le biais de ce chemin qui parcourt toutes les informations chronologiquement. <br>L'affiche rendait mieux en version papier, sur l'écran on peine à lire les informations.",
       other: "",
     },
+    // {
+    //   nb: "5",
+    //   projectName: "Projet 5",
+    //   subtitle: "Flyer pour club de cyclo",
+    //   explications: "Lors de la création d'une marque de nombreux logos sont créé, certaines idées ne donnent aucune suite, mais d'autres sont reprises et développées. <br>Cette planche comporte les différentes propositions de logo pour la marque Simon Laks que nous devions développer pour un projet de Communication lors de ma première année. <br>Ainsi que plusieurs propositions pour mon propre logo. Les logos retenus sont les deux au centre.",
+    //   other: "",
+    // },  
     {
       nb: "5",
       projectName: "Projet 5",
