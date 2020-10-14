@@ -273,3 +273,14 @@ loaderContainer.addEventListener("click", function() {
   }
 })
 
+var isMobile = navigator.userAgent.match(
+  /(iPhone|iPod|iPad|Android|webOS|BlackBerry|IEMobile|Opera Mini)/i)
+  // alert("You're using Mobile Device!!")
+
+  
+if (isMobile == null) {
+} else {
+  document.querySelector(".mobileMessage").style.display = "flex"
+  document.querySelector(".snowc").style.zIndex = "110"
+  console.log("oui oui");
+}
