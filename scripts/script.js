@@ -17,6 +17,8 @@ let enterCount = 0
 let fullscreenKey = 0
 let mouseX = 0;
 let mouseY = 0;
+let tutoriel1 =0
+let tutoriel2 =0
 function vh(v) {
   var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
   return (v * h) / 100;
@@ -105,6 +107,7 @@ document.addEventListener("keydown", e => {
     }
     direction = 'down'
     cycle()
+    tutoriel1 =1
     tutoriel()
   } 
   if (e.key === 'ArrowUp') {
@@ -116,9 +119,11 @@ document.addEventListener("keydown", e => {
     }
     direction = 'up'
     cycle()
+    tutoriel1 =1
     tutoriel()
   } 
   if (e.key === 'Enter') {
+    tutoriel2 =1
     tutoriel()
     enterToggle()
     if(enterCount%2 != 0) {
@@ -170,10 +175,12 @@ function enterClose() {
 }
 
 function tutoriel() {
-  setTimeout(function () {
-    var element = document.querySelector(".keysContainer");
-    element.classList.add("errase");
-   }, 3000);
+  if (tutoriel1===1 && tutoriel2===1) {
+    setTimeout(function () {
+      var element = document.querySelector(".keysContainer");
+      element.classList.add("errase");
+     }, 3000);
+  }
 }
 
 var change = 0
