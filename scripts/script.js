@@ -1,5 +1,6 @@
 const projectName = document.querySelector(".projectName")
 const subtitle = document.querySelector(".subtitle")
+const date = document.querySelector(".date")
 const explications = document.querySelector(".explications")
 const ElemBody = document.querySelector("body")
 const ElemText = document.querySelectorAll(".text")
@@ -7,9 +8,12 @@ const cursor2 = document.querySelector(".cursor2")
 const dotContainer = document.querySelector(".dot-container")
 const loaderContainer = document.querySelector(".loader-container")
 const arrowsFullscreen = document.querySelector(".arrowsFullscreen")
+const bgImage = document.querySelector(".bg-image");
+
+const listMonth = ["janv.", "févr.", "mars", "avr.", "mai", "juin", "juill.", "août", "sept.", "oct.", "nov.", "déc."]
 
 const NBprojet = textTable.length
-let NBcycle = 7
+let NBcycle = 0
 let direction = 0
 let IMGwidth = vmin(70)/1.4
 let IMGheight = vmin(70)
@@ -47,7 +51,12 @@ function setWindowSize() {
   }
 }
 
-
+function formatDate(oldDate) {
+  const month = oldDate.slice(0, 2);
+  const year = oldDate.slice(-4);
+  const newDate = `${listMonth[parseInt(month) - 1]} ${year}`;
+  return newDate;
+}
 
 for (i = 1; i < NBprojet+1; i++) {
   const newDot = document.createElement("div");
@@ -58,7 +67,9 @@ for (i = 1; i < NBprojet+1; i++) {
   document.querySelector(".img-container").appendChild(newImg)
 
   const urlImg = document.querySelector(`.img-${NBprojet+1-i}`);
-  urlImg.style.background = `url(./assets/imgs/img-${NBprojet+1-i}.jpg) no-repeat 50% 50%`
+
+  // urlImg.style.background = `url(./assets/imgs/img-${NBprojet+1-i}) no-repeat 50% 50%`
+  urlImg.style.background = `url(./assets/imgs/${textTable[NBprojet-i].imgName}) no-repeat 50% 50%`
   urlImg.style.backgroundSize = "cover"
   urlImg.style.transitionDuration = (NBprojet+1-i)*200 + "ms"
 }
@@ -75,11 +86,13 @@ for (i = 1; i < NBprojet+1; i++) {
 }
 
 // Import and display project 1 data
-projectName.innerHTML = textTable.find(search => search.nb == 1 ).projectName
-subtitle.innerHTML = textTable.find(search => search.nb == 1 ).subtitle
-explications.innerHTML = textTable.find(search => search.nb == 1 ).explications
+projectName.innerHTML = textTable[0].projectName
+subtitle.innerHTML = textTable[0].subtitle
+date.innerHTML = formatDate(textTable[0].date)
+explications.innerHTML = textTable[0].explications
 document.querySelector(".dot1").style.background = "white"
-
+bgImage.style.background = `url(./assets/imgs/${textTable[0].imgName}) no-repeat center center fixed`
+bgImage.style.backgroundSize = "cover"
 
 
 document.addEventListener("mousemove", e => {
@@ -186,7 +199,6 @@ function tutoriel() {
 var change = 0
 
 function cycle(){
-  
   if (direction == 'down' ) {
     NBcycle = NBcycle + 1
   } else if (direction == 'up' ) {
@@ -194,9 +206,9 @@ function cycle(){
   }
   if (NBcycle >= NBprojet+1) {
     NBcycle = NBcycle - NBprojet
-    } else if (NBcycle <=0 ) {
+  } else if (NBcycle <=0 ) {
     NBcycle = NBcycle + NBprojet
-    }
+  }
   for (i = 1; i < NBprojet+1; i++) {
     const img = document.querySelector(`.img-${i}`);
     change = i + NBcycle
@@ -206,40 +218,40 @@ function cycle(){
       change = change + NBprojet
     }
     // console.log(" i = ",i,"change = ",change,"NBcycle = ",NBcycle);
-    img.style.background = `url(./assets/imgs/img-${change}.jpg) no-repeat 50% 50%`
+    // console.log(change);
+    img.style.background = `url(./assets/imgs/${textTable[change-1].imgName}) no-repeat 50% 50%`
     img.style.backgroundSize = "cover"
-
     
-
     dotRemplissage()
-
+    
   }
   if(enterCount%2 != 0) {
     // enterOpen()
   }
-  function dotRemplissage() {
-    dotTransparent = document.querySelectorAll(".dot");
-    for (j = 0; j < dotTransparent.length; j++) {
-      dotTransparent[j].style.background = "transparent";
-    }
-    let dotNumber = NBcycle+1
-    if (dotNumber >= NBprojet+1) {
-      dotNumber = 1
-    }
-    // console.log(" dotNumber = ",dotNumber,"change = ",change)
-    const dotWhite = document.querySelector(`.dot${dotNumber}`);
-    dotWhite.style.background = "white"
-    
-    const bgImage = document.querySelector(".bg-image");
-    bgImage.style.background = `url(./assets/imgs/img-${dotNumber}.jpg) no-repeat center center fixed`
-    bgImage.style.backgroundSize = "cover"
-    
-    projectName.innerHTML = textTable.find(search => search.nb == dotNumber ).projectName
-    subtitle.innerHTML = textTable.find(search => search.nb == dotNumber ).subtitle
-    explications.innerHTML = textTable.find(search => search.nb == dotNumber ).explications
+  console.log(NBcycle);
+}
 
-
+function dotRemplissage() {
+  dotTransparent = document.querySelectorAll(".dot");
+  for (j = 0; j < dotTransparent.length; j++) {
+    dotTransparent[j].style.background = "transparent";
   }
+  let dotNumber = NBcycle+1
+  if (dotNumber >= NBprojet+1) {
+    dotNumber = 1
+  }
+  // console.log(" dotNumber = ",dotNumber,"change = ",change)
+  const dotWhite = document.querySelector(`.dot${dotNumber}`);
+  dotWhite.style.background = "white"
+  
+  projectName.innerHTML = textTable[dotNumber-1].projectName
+  subtitle.innerHTML = textTable[dotNumber-1].subtitle
+  date.innerHTML = formatDate(textTable[dotNumber-1].date)
+  explications.innerHTML = textTable[dotNumber-1].explications
+
+  // bgImage.style.background = `url(./assets/imgs/img-${dotNumber}) no-repeat center center fixed`
+  bgImage.style.background = `url(./assets/imgs/${textTable[dotNumber-1].imgName}) no-repeat center center fixed`
+  bgImage.style.backgroundSize = "cover"
 }
 
 // AUDIO
