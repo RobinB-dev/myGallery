@@ -1,66 +1,42 @@
 let textTable = [
   {
-    imgName: "Mucha.png",
-    projectName: "Projet 1",
-    subtitle: "Architecture 1",
+    imgName: "S3.png",
+    projectName: "Projet S3",
+    subtitle: "Perignat Sur Allier",
     date: "02 2021",
     explications:
-      "Cette affiche a été réalisée dans le cadre d'un travail pour M Lignel (culture de l'image).<br>Le sujet était la réalisation de l'affiche du film de notre choix à la manière d'Alfons Mucha, artiste tchécoslovaque, fer-de-lance du style « Art nouveau ».<br> J'ai choisi l'excellent film « American Beauty » dont on retrouve les éléments principaux dans un style et une mise en page empruntés à Mucha.",
+      "Le projet ici de seconde année consistée à créer trois éléments dans une ville de la périphérie de Clermont-Ferrand à 25 kilomètres de la ville. Nous devions réaliser une école, une salle funéraire ainsi qu’un hall de marché. Ci-contre se trouve le projet de l’école. Il a été dessiné en s’insérant dans la pente. L’idée était d’utiliser le triangle pour créer des espaces singuliers et s’ouvrir sur le paysage des puys d’Auvergne. Le plan-masse du bâtiment a été imaginé pour créer une intériorité au sein du complexe. Pour finir les espaces ont été réfléchis et dessinés pour rendre plus pratique l’utilisation de cet édifice (classe, salle de sport, administration distinctement séparée)",
   },
   {
-    imgName: "Bauhaus.png",
-    projectName: "Projet 2",
-    subtitle: "Architecture 2",
+    imgName: "S4.png",
+    projectName: "Projet S4",
+    subtitle: "Vue Ou Etres Vu",
     date: "01 2021",
     explications:
-      "Cette affiche a été réalisée dans le cadre d'un travail pour M Lignel (culture de l'image).<br>Le but de ce travail était la réalisation d'une affiche pour le Musée des Arts Décoratifs qui met en place une exposition intitilée : le fonctionnalisme, Gropius-Rams-Ive.<br>Cette exposition retrace l'histoire du fonctionnalisme depuis le Bauhaus jusqu’à Apple.<br>Sur cette affiche les objets phares du mouvement Bauhaus sont représentés à la façon de schémas, mettant en avant les fonctions premières de l'objet. On retrouvre aussi le logo du Bauhaus au coeur de la pomme d'Apple",
+      "Le projet ci-contre du semestre 4 consiste en la création du logement le long d'un chemin prédéfini par le groupe de projet. Le choix de la parcelle était très important. Il fallait s’insérer dans un tissu urbain dense et trouver une parcelle à redéfinir. J’ai choisi d’articuler mon immeuble de logements autour d’un patio central. L’objectif était de jouer avec les vues que celui-ci offrait aux habitants. La forme du bâtiment offre des ambiances spécifiques à chaque appartement et permet une double exposition. Pour finir les plans ont été dessiner pour répondre aux attentes d’un maximum de personnes.",
   },
   {
-    imgName: "Constructivisme.png",
-    projectName: "Projet 3",
-    subtitle: "Affiche de film",
+    imgName: "S5.png",
+    projectName: "Projet S5",
+    subtitle: "Vue Ou Etres Vu",
     date: "11 2020",
     explications:
-      "Cette affiche a été réalisée dans le cadre d'un travail pour M Lignel (culture de l'image).<br>Ce travail consiste à la réalisation d'une affiche pour le film « Demain », un documentaire sur la crise écologique et économique post 2008, à l'occasion de sa sortie sur Netflix.<br>Cette affiche doit reprendre le style graphique du mouvement constructiviste, qui est un courant qui puise sa source dans la révolution russe et par conséquent qui met en avant l'industrie qui était en plein essor.<br>C'est le juste équilibre entre ses deux notions plutôt opposées que j'ai essayé de trouver. En mettant en avant, de façon quasi propagandiste, les solutions présentées dans le film pour répondre aux problèmes actuels.",
+      "Le projet du semestre 5 consiste à créer un objet architectural habité dans l’entre-deux villes de Clermont-Ferrand (entre Clermont et Montferrand) le projet que nous avons mené en groupe est de révéler la tiretaine (rivière enfuie sous Clermont-Ferrand) le long des anciennes usines Michelines. Mes immeubles de logements s’insèrent dans une parcelle en friche. J’ai voulu créer des logements au sein d’un parc. Le bâtiment a été pensé par sa structure, celle-ci offre la possibilité d’une grande flexibilité. Elle permet également de créer de grande ouverture sur le parc tout en assurant l’intimité des habitants par la distance entre les immeubles et la végétation du parc",
   },
   {
-    imgName: "Heticien.jpg",
-    projectName: "Projet 4",
-    subtitle: "Affiche d'un journal étudiant",
+    imgName: "S6.png",
+    projectName: "Projet S6",
+    subtitle: "Les Murs Habites - Lussat",
     date: "09 2020",
     explications:
-      "Cette affiche a été réalisée dans le cadre d'un travail pour M de Torquat (information en question).<br> Le travail portait sur les différentes visions que les élèves pouvaient porter sur des problématiques liées a la crise du Covid. <br> Nous étions totalement libres quant au format du rendu. <br> J'ai choisi de le mettre sous la forme d'un journal, car l’enchaînement questions-réponses me faisait penser à une interview. <br> Comme ce journal était écrit par des élèves pour des élèves, j'ai imaginé que ce serait judicieux de l'afficher au sein d'Hetic, c'est pour cela que j'ai ajouté l'effet d'affiche collée au mur.",
+      "Ci-contre mon projet de semestre 6 mené avec Théophile Guerrero <br>Celui-ci se situe a Lussat une petite commune rurale nous avons faits un projet de tram arboricole a 4. Puis nous avons développé le projet ci-contre. Notre projet se situe dans le village de Lussat, à proximité de Clermont-Ferrand. Pour ce projet de logements nous avons cherché à requestionner la question de la limite, et de s’en emparer pour développer une architecture durable offrant des qualités de vues, et de lumière particulière par la disposition traversante des cellules, des séjours mais aussi la bi orientation dont toutes les chambres des lo¬gements en T4 bénéficies. Ce projet de logements est une composition de différents pro¬grammes, à la fois logements ouvriers temporaire en t7, mais aus¬si de logements en accession pour 40%, et des logements sociaux pour le reste, il a s’agit, de rendre une certaine viabilité à ce pro¬gramme. Le village étant composé de 950 habitants à l’heure actuel, et en décroissance démographique, il nous a fallu jouer de ses trams pour varier les typologies de logements. Une variation nécessaire à la viabilité du projet puisque l’enjeux était d’attirer des familles mais aussi de jeunes ménages. On vient alors habiter ces murs et murets qui ne s’apparenté plus a une simple limite mais a la composition d’un tampon en plusieurs couches entre : sentier et logements. Viens l’épaisseur du mur en premier, accompagner de noyer, de poiriers mais aussi de jardins privatifs créant la mise à distance des appartements situés en rdc ",
   },
   {
-    imgName: "Savoir.jpg",
-    projectName: "Projet 5",
-    subtitle: "Affiche pour le lancement d'un journal",
+    imgName: "S7.png",
+    projectName: "Projet S7",
+    subtitle: "Barcelone",
     date: "05 2020",
     explications:
-      "Cette affiche a été réalisée dans le cadre d'un travail pour Mme Boissier (culture générale).<br> Le travail consistait en la création d'un journal, nous avons choisi de faire un hebdomadaire sur l’actualité culturelle en France et dans le monde. <br> Je me suis inspiré de ce qui se faisait déjà dans les journaux concurrents pour réaliser la couverture. <br> Notre campagne de pub pour promouvoir la sortie de notre premier numéro était de coller la couverture en grand format dans les rues, j'ai donc ajouté cet effet de poster collé pour simuler le rendu final de notre campagne.",
-  },
-  {
-    imgName: "Drogues.jpg",
-    projectName: "Projet 6",
-    subtitle: "Affiche de conférence",
-    date: "03 2020",
-    explications:
-      "Cette affiche a été réalisée dans le cadre d'un travail pour Mme Boissier (culture générale).<br>Le sujet choisi était l'utilisation des drogues à travers l'histoire.<br>À travers cette affiche, je voulais montrer qu'au-delà de l'aspect récréatif ou addictif des drogues qui est très souvent décrié, un autre visage se cachait, symbolisant la médecine, qui, depuis l'aube des temps utilise les drogues pour essayer de soigner des maux.",
-  },
-  {
-    imgName: "Logotypes.jpg",
-    projectName: "Projet 7",
-    subtitle: "Création de logotypes",
-    date: "05 2020",
-    explications:
-      "Lors de la création d'une marque de nombreux logos sont créés, certaines idées ne donnent aucune suite, mais d'autres sont reprises et développées. <br>Cette planche comporte les différentes propositions de logos pour la marque Simon Laks que nous devions développer pour un projet de Communication lors de ma première année. <br>Ainsi que plusieurs propositions pour mon propre logo. Les logos retenus sont les deux au centre.",
-  },
-  {
-    imgName: "Folio.jpg",
-    projectName: "Projet 8",
-    subtitle: "Architecture 8",
-    date: "04 2020",
-    explications:
-      "Mon portfolio répertorie tous les projets de développement web que j'ai réalisés depuis que je suis à Hetic. <br>Cliquez sur mon nom à droite pour y accéder. -->",
+      "Le projet ici est un projet mené à Barcelone dans le cadre de mon échange Erasmus. L’objectif été de mener un projet dans l’une des parcelles spécifiques à cette ville est d’y insérer des logements modulables. Pour ce faire j’ai voulu redéfinir ce genre de parcelle en la laissant ouverte dans la ville et en créant un parc en son sein. Pour mes deux immeubles de logements j’ai imaginé une structure sur pilotis qui permet une grande modularité des plans. Ceux-ci ont été créés dans un souci de transparence et de modularité",
   },
 ];
